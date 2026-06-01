@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Sora:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --lda-blue: #2563EB;
+  --bert-orange: #EA580C;
+  --fomo-red: #DC2626;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-gray-50 text-gray-900 font-sans antialiased;
+}
+
+/* Animated counter */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-count {
+  animation: countUp 0.6s ease-out forwards;
+}
+
+/* Gradient text utility */
+.text-gradient-lda {
+  background: linear-gradient(135deg, #1D4ED8, #60A5FA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-bert {
+  background: linear-gradient(135deg, #C2410C, #FB923C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-fomo {
+  background: linear-gradient(135deg, #991B1B, #F87171);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section divider */
+.section-divider {
+  @apply w-16 h-1 rounded-full mx-auto my-4;
+}
+
+/* Recharts custom styles */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: #F3F4F6;
+}
+
+.recharts-tooltip-wrapper {
+  @apply shadow-card-lg;
+}
+
+/* Floating card animation */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px) rotate(-1deg); }
+  50%       { transform: translateY(-12px) rotate(1deg); }
+}
+
+.float-card-1 { animation: floatY 4s ease-in-out infinite; }
+.float-card-2 { animation: floatY 4s ease-in-out infinite 1.5s; }
+.float-card-3 { animation: floatY 4s ease-in-out infinite 0.8s; }
+
+/* Stagger animation delays */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+
+/* Bar fill color override for recharts */
+.recharts-bar-rectangle.lda-bar path { fill: #2563EB; }
+.recharts-bar-rectangle.bert-bar path { fill: #EA580C; }
+
+/* Section fade */
+.opacity-0-initial {
+  opacity: 0;
+}
